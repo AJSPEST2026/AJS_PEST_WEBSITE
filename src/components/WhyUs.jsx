@@ -58,7 +58,7 @@ function WhyUs() {
             Bangalore Families
           </h2>
           <p className="why-subtitle why-reveal">
-            With over 15 years of experience protecting homes and businesses
+            With over 20 years of experience protecting homes and businesses
             across Bangalore, we combine expertise with care to deliver
             pest-free living spaces.
           </p>

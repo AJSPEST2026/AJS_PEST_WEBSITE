@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: 'Suresh Rao',
     initials: 'SR',
-    location: 'Koramangala',
-    text: 'AJS completely rid our apartment in Koramangala of cockroaches. The team was professional, on time, and explained every step. No smell, no mess. Highly recommend!',
+    location: 'Jayanagar',
+    text: 'AJS completely rid our apartment in Jayanagar of cockroaches. The team was professional, on time, and explained every step. No smell, no mess. Highly recommend!',
   },
   {
     name: 'Priya Menon',
     initials: 'PM',
-    location: 'Indiranagar',
-    text: "We've had an AMC with AJS for our restaurant in Indiranagar for 3 years now. Zero pest issues, all FSSAI reports are clean. They're reliable and genuinely good at their job.",
+    location: 'RR Nagar',
+    text: "We've had an AMC with AJS for our restaurant in RR Nagar for 3 years now. Zero pest issues, all FSSAI reports are clean. They're reliable and genuinely good at their job.",
   },
   {
     name: 'Anil Kumar',
     initials: 'AK',
-    location: 'Whitefield',
+    location: 'JP Nagar',
     text: 'Termites had been eating through our wardrobes quietly. AJS detected it during their inspection and treated the whole house. Two years on — not a single termite. Worth every rupee.',
   },
 ];

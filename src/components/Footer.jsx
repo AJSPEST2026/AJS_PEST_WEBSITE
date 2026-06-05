@@ -15,7 +15,9 @@ const Footer = () => {
 
   const areas = [
     'Vijayanagar',
-    'Sanjeevininagar',
+    'Jayanagar',
+    'JP Nagar',
+    'RR Nagar',
     'Mudalapalya',
     'Rajajinagar',
     'Magadi Road',
