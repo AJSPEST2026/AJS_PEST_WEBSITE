@@ -1,0 +1,118 @@
+.cta-band {
+  margin: 0 5% 5rem;
+  background: #2C3A1E;
+  border-radius: 2rem;
+  padding: 4rem 5%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(141, 198, 63, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.cta-band h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #F5F0E8;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.cta-band h2 span {
+  color: #8DC63F;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  white-space: nowrap;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+.phone-btn {
+  background: rgba(245, 240, 232, 0.08);
+  border: 1px solid rgba(245, 240, 232, 0.2);
+  color: #F5F0E8;
+}
+
+.phone-btn:hover {
+  background: rgba(245, 240, 232, 0.14);
+}
+
+.cta-actions .btn-primary {
+  background: #8DC63F;
+  color: #2C3A1E;
+  border: 1px solid #8DC63F;
+}
+
+.cta-actions .btn-primary:hover {
+  background: #7ab832;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-band {
+    margin: 0 4% 3rem;
+    padding: 3rem 6%;
+  }
+
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cta-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn {
+    justify-content: center;
+  }
+}

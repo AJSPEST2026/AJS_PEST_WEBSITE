@@ -1,0 +1,135 @@
+/* ── Process Section ── */
+.process-section {
+  padding: 7rem 5%;
+  background: #F5F0E8;
+}
+
+/* ── Header ── */
+.process-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.process-header .section-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #8DC63F;
+  margin-bottom: 1rem;
+}
+
+.process-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #2C3A1E;
+  line-height: 1.2;
+}
+
+/* ── Steps Grid ── */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Connecting Line */
+.steps-line {
+  position: absolute;
+  top: 24px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, #8DC63F, #C9A84C);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+/* ── Step Card ── */
+.step-card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: #FAF8F4;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(44, 58, 30, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(44, 58, 30, 0.08);
+}
+
+/* ── Step Number ── */
+.step-number-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #2C3A1E;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: 0 0 0 4px #F5F0E8, 0 0 0 6px rgba(141, 198, 63, 0.3);
+}
+
+.step-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F5F0E8;
+  line-height: 1;
+}
+
+/* ── Step Text ── */
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2C3A1E;
+  margin-bottom: 0.75rem;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(44, 58, 30, 0.6);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .steps-line {
+    display: none;
+  }
+
+  .process-title {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-section {
+    padding: 4rem 5%;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .process-title {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,53 @@
+/* ===== AJS Logo Component ===== */
+.ajs-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ajs-logo__mark {
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(13, 71, 161, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ajs-logo:hover .ajs-logo__mark {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(13, 71, 161, 0.35);
+}
+
+.ajs-logo__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ajs-logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.ajs-logo__brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  color: #F5F0E8;
+  white-space: nowrap;
+}
+
+.ajs-logo__accent {
+  color: #4CAF50;
+}
+
+/* Footer variant — darker background, brighter text */
+.ajs-logo--footer .ajs-logo__brand {
+  color: #F5F0E8;
+}
+
+.ajs-logo--footer .ajs-logo__accent {
+  color: #66BB6A;
+}

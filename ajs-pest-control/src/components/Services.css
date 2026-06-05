@@ -1,0 +1,192 @@
+.services {
+  padding: 7rem 5%;
+  background: #FAF8F4;
+}
+
+/* ── Header ── */
+.services-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: #8DC63F;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #8DC63F;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #1A1A1A;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: #6B6B6B;
+  line-height: 1.7;
+}
+
+/* ── Grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Card ── */
+.service-card {
+  background: #F5F0E8;
+  border-radius: 1.5rem;
+  padding: 2.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8DC63F, #3D5226);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(61, 82, 38, 0.12);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Featured Card ── */
+.service-card--featured {
+  background: #2C3A1E;
+}
+
+.service-card--featured .service-title {
+  color: #F5F0E8;
+}
+
+.service-card--featured .service-description {
+  color: rgba(245, 240, 232, 0.65);
+}
+
+.service-card--featured .service-link {
+  color: #A8D96A;
+}
+
+/* ── Icon ── */
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(141, 198, 63, 0.12);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.service-card--featured .service-icon {
+  background: rgba(141, 198, 63, 0.18);
+}
+
+/* ── Content ── */
+.service-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #1A1A1A;
+  margin-bottom: 0.75rem;
+}
+
+.service-description {
+  font-size: 0.92rem;
+  color: #6B6B6B;
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+}
+
+/* ── Link ── */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #8DC63F;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.service-link:hover {
+  gap: 0.75rem;
+}
+
+.service-link-arrow {
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover .service-link-arrow {
+  transform: translateX(2px);
+}
+
+/* ── Reveal Animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding: 4.5rem 5%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 1.8rem;
+  }
+}

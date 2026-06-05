@@ -1,0 +1,142 @@
+/* ══════════════════════════════════════
+   AJS Pest Control — Global Styles
+   ══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --olive: #2C3A1E;
+  --olive-mid: #3D5226;
+  --lime: #8DC63F;
+  --lime-light: #A8D55A;
+  --cream: #F5F0E8;
+  --warm-white: #FAF8F4;
+  --charcoal: #1A1A1A;
+  --muted: #6B7260;
+  --gold: #C9A84C;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--warm-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ── GLOBAL ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── SECTION SHARED STYLES ── */
+.section-label {
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--lime);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--lime);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* ── BUTTON SHARED STYLES ── */
+.btn-primary {
+  background: var(--lime);
+  color: var(--olive);
+  padding: .85rem 2rem;
+  border-radius: 3rem;
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 8px 24px rgba(141, 198, 63, .35);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary:hover {
+  background: var(--lime-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(141, 198, 63, .45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  padding: .85rem 2rem;
+  border-radius: 3rem;
+  font-weight: 500;
+  font-size: .95rem;
+  text-decoration: none;
+  border: 1px solid rgba(245, 240, 232, .25);
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-outline:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

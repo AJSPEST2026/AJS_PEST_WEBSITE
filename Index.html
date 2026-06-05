@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJS Pest Control — Bangalore's Premium Pest Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #2C3A1E;
+    --olive-mid: #3D5226;
+    --lime: #8DC63F;
+    --lime-light: #A8D55A;
+    --cream: #F5F0E8;
+    --warm-white: #FAF8F4;
+    --charcoal: #1A1A1A;
+    --muted: #6B7260;
+    --gold: #C9A84C;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(44, 58, 30, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(141,198,63,.15);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900;
+    color: var(--cream);
+    letter-spacing: -0.5px;
+  }
+  .logo span { color: var(--lime); }
+
+  nav ul {
+    list-style: none;
+    display: flex; gap: 2.5rem;
+  }
+  nav ul a {
+    text-decoration: none;
+    color: rgba(245,240,232,.75);
+    font-size: .9rem; font-weight: 400;
+    letter-spacing: .04em;
+    transition: color .2s;
+  }
+  nav ul a:hover { color: var(--lime); }
+
+  .nav-cta {
+    background: var(--lime); color: var(--olive) !important;
+    padding: .5rem 1.3rem; border-radius: 2rem;
+    font-weight: 500 !important;
+    transition: background .2s, transform .2s !important;
+  }
+  .nav-cta:hover { background: var(--lime-light) !important; transform: scale(1.03); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--olive);
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding: 7rem 5% 4rem;
+    position: relative; overflow: hidden;
+    align-items: center; gap: 4rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(141,198,63,.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 10% 80%, rgba(201,168,76,.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* diagonal accent line */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 30%; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(141,198,63,.2) 30%, rgba(141,198,63,.2) 70%, transparent);
+    pointer-events: none;
+  }
+
+  .hero-left { position: relative; z-index: 2; }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(141,198,63,.12);
+    border: 1px solid rgba(141,198,63,.3);
+    border-radius: 2rem;
+    padding: .35rem 1rem;
+    font-size: .78rem; font-weight: 500;
+    color: var(--lime); letter-spacing: .08em;
+    text-transform: uppercase; margin-bottom: 1.8rem;
+    animation: fadeUp .6s ease both;
+  }
+  .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp .7s .1s ease both;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--lime);
+    position: relative; display: inline-block;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; left: 0; right: 0;
+    height: 3px;
+    background: var(--lime);
+    border-radius: 2px;
+    opacity: .4;
+  }
+
+  .hero p {
+    font-size: 1.05rem; font-weight: 300;
+    color: rgba(245,240,232,.7);
+    line-height: 1.8; max-width: 480px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp .7s .2s ease both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp .7s .3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--lime); color: var(--olive);
+    padding: .85rem 2rem; border-radius: 3rem;
+    font-weight: 600; font-size: .95rem;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background .2s, transform .2s, box-shadow .2s;
+    box-shadow: 0 8px 24px rgba(141,198,63,.35);
+    display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .btn-primary:hover { background: var(--lime-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(141,198,63,.45); }
+
+  .btn-outline {
+    background: transparent; color: var(--cream);
+    padding: .85rem 2rem; border-radius: 3rem;
+    font-weight: 500; font-size: .95rem;
+    text-decoration: none; border: 1px solid rgba(245,240,232,.25);
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+    display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .btn-outline:hover { border-color: var(--lime); color: var(--lime); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 3.5rem;
+    animation: fadeUp .7s .45s ease both;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700;
+    color: var(--cream); line-height: 1;
+  }
+  .stat-num span { color: var(--lime); }
+  .stat-label {
+    font-size: .78rem; color: rgba(245,240,232,.5);
+    text-transform: uppercase; letter-spacing: .08em;
+    margin-top: .3rem;
+  }
+
+  /* ── HERO IMAGE SIDE ── */
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeIn .9s .2s ease both;
+  }
+
+  .hero-img-wrap {
+    position: relative;
+    width: 100%; max-width: 520px;
+  }
+
+  .hero-img-main {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 2rem 2rem 0 2rem;
+    box-shadow: 0 40px 80px rgba(0,0,0,.5);
+  }
+
+  .hero-badge-float {
+    position: absolute; bottom: -1.5rem; left: -2rem;
+    background: var(--cream);
+    border-radius: 1.2rem;
+    padding: 1rem 1.4rem;
+    display: flex; align-items: center; gap: .9rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,.25);
+    min-width: 200px;
+  }
+  .hbf-icon {
+    width: 46px; height: 46px;
+    background: var(--lime); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .hbf-text strong { font-size: .95rem; color: var(--charcoal); display: block; }
+  .hbf-text span { font-size: .75rem; color: var(--muted); }
+
+  .hero-cert {
+    position: absolute; top: 1.5rem; right: -1.5rem;
+    background: var(--olive-mid);
+    border: 1px solid rgba(141,198,63,.25);
+    border-radius: 1rem;
+    padding: .8rem 1.1rem;
+    display: flex; align-items: center; gap: .7rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.3);
+  }
+  .hero-cert .stars { color: var(--gold); font-size: .85rem; letter-spacing: 2px; }
+  .hero-cert p { font-size: .72rem; color: rgba(245,240,232,.7); }
+  .hero-cert strong { font-size: .85rem; color: var(--cream); display: block; }
+
+  /* ── MARQUEE ── */
+  .marquee-bar {
+    background: var(--olive-mid);
+    padding: 1rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(141,198,63,.1);
+    border-bottom: 1px solid rgba(141,198,63,.1);
+  }
+  .marquee-inner {
+    display: flex; gap: 3rem; width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+  .marquee-item {
+    white-space: nowrap;
+    font-size: .8rem; font-weight: 400;
+    color: rgba(245,240,232,.55);
+    letter-spacing: .1em; text-transform: uppercase;
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .marquee-item::before {
+    content: '✦';
+    color: var(--lime); font-size: .6rem;
+  }
+
+  @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 5%;
+    background: var(--warm-white);
+  }
+
+  .section-label {
+    font-size: .78rem; font-weight: 500;
+    color: var(--lime); letter-spacing: .15em;
+    text-transform: uppercase; margin-bottom: .8rem;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: var(--lime); border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.2;
+    color: var(--charcoal); margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem; color: var(--muted);
+    font-weight: 300; max-width: 500px; line-height: 1.7;
+  }
+
+  .services-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; gap: 2rem; flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--cream);
+    border-radius: 1.5rem;
+    padding: 2.2rem;
+    transition: transform .3s, box-shadow .3s;
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(44,58,30,.06);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--lime), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(44,58,30,.12); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-card.featured {
+    background: var(--olive);
+    color: var(--cream);
+  }
+  .service-card.featured .service-desc { color: rgba(245,240,232,.65); }
+  .service-card.featured .service-title { color: var(--cream); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(141,198,63,.12);
+    border-radius: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 1.5rem;
+  }
+  .service-card.featured .service-icon { background: rgba(141,198,63,.2); }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: .7rem;
+  }
+
+  .service-desc {
+    font-size: .9rem; color: var(--muted);
+    line-height: 1.7; margin-bottom: 1.5rem;
+  }
+
+  .service-link {
+    font-size: .85rem; font-weight: 500;
+    color: var(--lime); text-decoration: none;
+    display: flex; align-items: center; gap: .4rem;
+    transition: gap .2s;
+  }
+  .service-link:hover { gap: .7rem; }
+
+  /* ── WHY US ── */
+  .why {
+    padding: 7rem 5%;
+    background: var(--olive);
+    position: relative; overflow: hidden;
+  }
+  .why::before {
+    content: '';
+    position: absolute;
+    top: -30%; right: -10%;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(141,198,63,.07), transparent 70%);
+    pointer-events: none;
+  }
+
+  .why-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+
+  .why .section-title { color: var(--cream); }
+  .why .section-sub { color: rgba(245,240,232,.6); margin-bottom: 3rem; }
+
+  .features-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .feature-item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.2rem 1.5rem;
+    background: rgba(245,240,232,.04);
+    border: 1px solid rgba(141,198,63,.1);
+    border-radius: 1rem;
+    transition: background .2s, border-color .2s;
+  }
+  .feature-item:hover { background: rgba(141,198,63,.07); border-color: rgba(141,198,63,.25); }
+
+  .feature-check {
+    width: 36px; height: 36px;
+    background: rgba(141,198,63,.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: .85rem;
+    color: var(--lime);
+  }
+
+  .feature-text strong { display: block; color: var(--cream); font-size: .95rem; margin-bottom: .3rem; }
+  .feature-text span { font-size: .85rem; color: rgba(245,240,232,.55); line-height: 1.5; }
+
+  /* why right image stack */
+  .why-imgs {
+    position: relative; height: 560px;
+  }
+  .why-img-1 {
+    position: absolute; top: 0; right: 0;
+    width: 75%; aspect-ratio: 4/5;
+    object-fit: cover; border-radius: 1.5rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+  }
+  .why-img-2 {
+    position: absolute; bottom: -2rem; left: 0;
+    width: 55%; aspect-ratio: 1;
+    object-fit: cover; border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,.45);
+    border: 4px solid var(--olive);
+  }
+
+  .why-pill {
+    position: absolute; top: 2.5rem; left: 0;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: .6rem 1.2rem;
+    border-radius: 2rem; font-weight: 600;
+    font-size: .82rem; z-index: 3;
+    box-shadow: 0 8px 20px rgba(201,168,76,.4);
+  }
+
+  /* ── PROCESS ── */
+  .process {
+    padding: 7rem 5%;
+    background: var(--cream);
+  }
+  .process-header { text-align: center; margin-bottom: 4.5rem; }
+  .process-header .section-label { justify-content: center; }
+  .process-header .section-sub { margin: 0 auto; text-align: center; }
+
+  .steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 2.2rem; left: 12%; right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--lime), var(--gold));
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center; position: relative; z-index: 1;
+    padding: 0 1rem;
+  }
+  .step-num {
+    width: 48px; height: 48px;
+    background: var(--olive);
+    color: var(--cream);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    margin: 0 auto 1.5rem;
+    border: 3px solid var(--warm-white);
+    box-shadow: 0 0 0 2px var(--olive);
+  }
+  .step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--charcoal);
+    margin-bottom: .5rem;
+  }
+  .step p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 7rem 5%;
+    background: var(--warm-white);
+  }
+  .test-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; flex-wrap: wrap; gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .test-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .test-card {
+    background: var(--cream);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(44,58,30,.06);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .test-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(44,58,30,.1); }
+
+  .test-stars { color: var(--gold); font-size: 1rem; letter-spacing: 3px; margin-bottom: 1.2rem; }
+
+  .test-text {
+    font-size: .9rem; color: var(--charcoal);
+    line-height: 1.75; margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .test-author {
+    display: flex; align-items: center; gap: .9rem;
+  }
+  .test-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--olive-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--lime); font-weight: 700;
+    flex-shrink: 0;
+  }
+  .test-name strong { display: block; font-size: .9rem; color: var(--charcoal); }
+  .test-name span { font-size: .78rem; color: var(--muted); }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    margin: 0 5% 5rem;
+    background: var(--olive);
+    border-radius: 2rem;
+    padding: 4rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 3rem; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute; top: -50%; right: -5%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(141,198,63,.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--cream); font-weight: 700;
+    max-width: 480px; line-height: 1.3;
+  }
+  .cta-band h2 span { color: var(--lime); }
+
+  .cta-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0;
+  }
+
+  .phone-btn {
+    display: flex; align-items: center; gap: .7rem;
+    background: rgba(245,240,232,.08);
+    border: 1px solid rgba(245,240,232,.2);
+    border-radius: 3rem;
+    padding: .85rem 1.6rem;
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 500; font-size: .95rem;
+    transition: background .2s;
+  }
+  .phone-btn:hover { background: rgba(245,240,232,.14); }
+  .phone-icon { font-size: 1.1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 4rem 5% 2rem;
+    color: rgba(245,240,232,.55);
+  }
+
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem; margin-bottom: 3rem;
+  }
+
+  .footer-brand .logo { font-size: 1.4rem; display: block; margin-bottom: 1rem; }
+  .footer-brand p { font-size: .85rem; line-height: 1.7; max-width: 280px; }
+
+  .footer-col h5 {
+    font-size: .78rem; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--cream);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: .6rem; }
+  .footer-col ul a { text-decoration: none; color: rgba(245,240,232,.5); font-size: .85rem; transition: color .2s; }
+  .footer-col ul a:hover { color: var(--lime); }
+
+  .contact-item {
+    display: flex; gap: .6rem; align-items: flex-start;
+    font-size: .85rem; margin-bottom: .8rem;
+  }
+  .contact-item .ci { color: var(--lime); flex-shrink: 0; margin-top: .1rem; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(245,240,232,.08);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom span { font-size: .8rem; }
+
+  .social-links { display: flex; gap: 1rem; }
+  .social-links a {
+    width: 36px; height: 36px;
+    background: rgba(245,240,232,.06);
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    color: rgba(245,240,232,.5);
+    text-decoration: none; font-size: .85rem;
+    transition: background .2s, color .2s;
+  }
+  .social-links a:hover { background: var(--lime); color: var(--olive); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .7s, transform .7s;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; padding-top: 7rem; text-align: center; }
+    .hero p { max-width: 100%; }
+    .hero-btns { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-right { display: none; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-inner { grid-template-columns: 1fr; }
+    .why-imgs { display: none; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .steps::before { display: none; }
+    .test-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .test-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    .cta-band { text-align: center; justify-content: center; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">AJS <span>Pest</span> Control Solutions</div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="tel:+919035493416" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="badge"><span class="badge-dot"></span> Bangalore's #1 Pest Management</div>
+    <h1>Protect Your<br>Home From<br><em>Every Pest</em></h1>
+    <p>Care of your Health, Property &amp; Environment. Professional pest control solutions for homes and businesses across Bengaluru — safe, certified, and guaranteed.</p>
+    <div class="hero-btns">
+      <a href="tel:+919035493416" class="btn-primary">📞 Get Free Inspection</a>
+      <a href="#services" class="btn-outline">Our Services →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">10K<span>+</span></div>
+        <div class="stat-label">Homes Treated</div>
+      </div>
+      <div>
+        <div class="stat-num">15<span>yr</span></div>
+        <div class="stat-label">Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">98<span>%</span></div>
+        <div class="stat-label">Success Rate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <img
+        src="images/hero-main.png"
+        alt="AJS Pest Control technician treating a Bangalore apartment"
+        class="hero-img-main"
+      >
+      <div class="hero-badge-float">
+        <div class="hbf-icon">🛡️</div>
+        <div class="hbf-text">
+          <strong>ISO Certified</strong>
+          <span>Safe for Family &amp; Pets</span>
+        </div>
+      </div>
+      <div class="hero-cert">
+        <div>
+          <div class="stars">★★★★★</div>
+          <strong>4.9 / 5.0</strong>
+          <p>Google Reviews</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span class="marquee-item">Cockroach Control</span>
+    <span class="marquee-item">Termite Treatment</span>
+    <span class="marquee-item">Mosquito Control</span>
+    <span class="marquee-item">Rodent Management</span>
+    <span class="marquee-item">Bed Bug Treatment</span>
+    <span class="marquee-item">Ant Control</span>
+    <span class="marquee-item">Spider Control</span>
+    <span class="marquee-item">Wood Borer Treatment</span>
+    <span class="marquee-item">Commercial Pest Management</span>
+    <span class="marquee-item">Residential Pest Control</span>
+    <!-- duplicates for infinite scroll -->
+    <span class="marquee-item">Cockroach Control</span>
+    <span class="marquee-item">Termite Treatment</span>
+    <span class="marquee-item">Mosquito Control</span>
+    <span class="marquee-item">Rodent Management</span>
+    <span class="marquee-item">Bed Bug Treatment</span>
+    <span class="marquee-item">Ant Control</span>
+    <span class="marquee-item">Spider Control</span>
+    <span class="marquee-item">Wood Borer Treatment</span>
+    <span class="marquee-item">Commercial Pest Management</span>
+    <span class="marquee-item">Residential Pest Control</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Comprehensive Pest<br>Control Solutions</h2>
+    </div>
+    <p class="section-sub">From routine inspections to emergency treatments, we handle every pest challenge in Bangalore homes and offices.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🪳</div>
+      <h3 class="service-title">Cockroach Control</h3>
+      <p class="service-desc">Targeted gel bait and spray treatments that eliminate cockroach infestations at source — kitchen, bathroom, and drainage included.</p>
+      <a href="#contact" class="service-link">Book Treatment →</a>
+    </div>
+    <div class="service-card featured reveal">
+      <div class="service-icon">🐜</div>
+      <h3 class="service-title">Termite (Anti-Termite)</h3>
+      <p class="service-desc">Pre- and post-construction anti-termite treatments protecting your property's structural integrity with long-lasting chemical barriers.</p>
+      <a href="#contact" class="service-link">Book Treatment →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🦟</div>
+      <h3 class="service-title">Mosquito Control</h3>
+      <p class="service-desc">Fogging, larvicidal, and residual spraying to eliminate mosquitoes and protect your family from dengue and malaria vectors.</p>
+      <a href="#contact" class="service-link">Book Treatment →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🐀</div>
+      <h3 class="service-title">Rodent Management</h3>
+      <p class="service-desc">Bait stations, trapping systems, and entry-point sealing to keep rats and mice away from your home and food stores.</p>
+      <a href="#contact" class="service-link">Book Treatment →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🛏️</div>
+      <h3 class="service-title">Bed Bug Treatment</h3>
+      <p class="service-desc">Heat and chemical treatments to completely eradicate bed bug infestations from mattresses, furniture, and walls.</p>
+      <a href="#contact" class="service-link">Book Treatment →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏢</div>
+      <h3 class="service-title">Commercial Services</h3>
+      <p class="service-desc">Customised AMC contracts for offices, restaurants, hospitals, and warehouses — FSSAI compliant with regular audit reports.</p>
+      <a href="#contact" class="service-link">Book Treatment →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div>
+      <div class="section-label">Why Choose AJS</div>
+      <h2 class="section-title reveal">Trusted by 10,000+<br>Bangalore Families</h2>
+      <p class="section-sub reveal">Over 15 years of experience protecting homes and businesses across Bengaluru — from Indiranagar to Whitefield.</p>
+
+      <div class="features-list">
+        <div class="feature-item reveal">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>Govt. Certified Technicians</strong>
+            <span>All our team members are licensed by PCAI and trained in safe chemical handling and application methods.</span>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>Child &amp; Pet Safe Chemicals</strong>
+            <span>We use WHO-approved, odourless formulations that are safe for your family — including kids and pets.</span>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>Guaranteed Results</strong>
+            <span>Free re-treatment within the warranty period if pests return. No questions asked.</span>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>Same-Day Emergency Service</strong>
+            <span>Call before noon and we'll be at your doorstep the same day across all Bangalore zones.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-imgs reveal">
+      <div class="why-pill">✦ Serving Bangalore since 2009</div>
+      <img
+        src="images/why-service.png"
+        alt="AJS Pest Control service van at a Bangalore apartment complex"
+        class="why-img-1"
+      >
+      <img
+        src="images/technician.png"
+        alt="AJS pest control technician in Bangalore neighborhood"
+        class="why-img-2"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-header">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title reveal">Four Simple Steps to<br>a Pest-Free Home</h2>
+    <p class="section-sub reveal">Our streamlined process ensures minimal disruption to your daily life while delivering maximum results.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <h4>Book Inspection</h4>
+      <p>Call us or fill the form. We confirm a visit slot within 2 hours for your area in Bangalore.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <h4>Free Assessment</h4>
+      <p>Our certified technician inspects your property and gives a detailed pest report with a transparent quote.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <h4>Treatment Day</h4>
+      <p>We apply targeted, safe treatments using industry-best equipment. Most jobs are done in 2–3 hours.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <h4>Follow-Up &amp; Warranty</h4>
+      <p>A follow-up visit is scheduled within the warranty window to ensure 100% elimination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="test-header reveal">
+    <div>
+      <div class="section-label">Customer Reviews</div>
+      <h2 class="section-title">What Bangaloreans Say</h2>
+    </div>
+    <div style="display:flex;align-items:center;gap:.8rem">
+      <span style="font-size:1.5rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--charcoal)">4.9</span>
+      <span style="color:var(--gold);font-size:1.1rem;letter-spacing:3px">★★★★★</span>
+      <span style="font-size:.85rem;color:var(--muted)">on Google</span>
+    </div>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"AJS completely rid our apartment in Koramangala of cockroaches. The team was professional, on time, and explained every step. No smell, no mess. Highly recommend!"</p>
+      <div class="test-author">
+        <div class="test-avatar">SR</div>
+        <div class="test-name">
+          <strong>Suresh Rao</strong>
+          <span>Koramangala, Bangalore</span>
+        </div>
+      </div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"We've had an AMC with AJS for our restaurant in Indiranagar for 3 years now. Zero pest issues, all FSSAI reports are clean. They're reliable and genuinely good at their job."</p>
+      <div class="test-author">
+        <div class="test-avatar">PM</div>
+        <div class="test-name">
+          <strong>Priya Menon</strong>
+          <span>Indiranagar, Bangalore</span>
+        </div>
+      </div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"Termites had been eating through our wardrobes quietly. AJS detected it during their inspection and treated the whole house. Two years on — not a single termite. Worth every rupee."</p>
+      <div class="test-author">
+        <div class="test-avatar">AK</div>
+        <div class="test-name">
+          <strong>Anil Kumar</strong>
+          <span>Whitefield, Bangalore</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band reveal" id="contact">
+  <h2>Ready for a <span>Pest-Free</span> Home<br>in Bangalore?</h2>
+  <div class="cta-actions">
+    <a href="tel:+919035493416" class="phone-btn">
+      <span class="phone-icon">📞</span> +91 90354 93416
+    </a>
+    <a href="https://wa.me/919035493416" class="btn-primary" target="_blank">
+      💬 WhatsApp Us
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo">AJS <span>Pest</span> Control Solutions</span>
+      <p>Care of your Health, Property &amp; Environment. Led by <strong style="color:var(--cream)">Jagadish Ayyappa</strong>, serving Bengaluru with certified, safe pest management solutions.</p>
+      <div class="social-links" style="margin-top:1.5rem">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">in</a>
+        <a href="#" aria-label="WhatsApp">w</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Cockroach Control</a></li>
+        <li><a href="#">Termite Control</a></li>
+        <li><a href="#">Bed Bug Control</a></li>
+        <li><a href="#">Mosquito Control</a></li>
+        <li><a href="#">Wood Borer Control</a></li>
+        <li><a href="#">Rodent Control</a></li>
+        <li><a href="#">Commercial AMC</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Service Areas</h5>
+      <ul>
+        <li><a href="#">Vijayanagar</a></li>
+        <li><a href="#">Sanjeevininagar</a></li>
+        <li><a href="#">Mudalapalya</a></li>
+        <li><a href="#">Rajajinagar</a></li>
+        <li><a href="#">Magadi Road</a></li>
+        <li><a href="#">Basaveshwaranagar</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <div class="contact-item">
+        <span class="ci">📞</span>
+        <span>+91 90354 93416<br>+91 98444 94476</span>
+      </div>
+      <div class="contact-item">
+        <span class="ci">✉️</span>
+        <span>ajspestcontrol147@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="ci">📍</span>
+        <span># 2043/C, 1st Main, 3rd Cross<br>Sanjeevininagar, Mudalapalya<br>Vijayanagar, Bengaluru – 560 072</span>
+      </div>
+      <div class="contact-item">
+        <span class="ci">🕐</span>
+        <span>Mon–Sat: 8AM – 8PM<br>Sun: 9AM – 5PM</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 AJS Pest Control Solutions, Bengaluru. All rights reserved.</span>
+    <span>PCAI Licensed · ISO 9001:2015 Certified</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 0.06) + 's';
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 60 ? '.8rem 5%' : '1.2rem 5%';
+    nav.style.transition = 'padding .3s';
+  });
+</script>
+</body>
+</html>
